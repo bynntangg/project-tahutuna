@@ -950,3 +950,28 @@ footer {
         font-size: 20px;
     }
 }
+@media (max-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .testimonial-item {
+        margin: 0 10px;
+    }
+    
+    .testimonial-content {
+        padding: 20px;
+    }
+    
+    .testimonial-author {
+        padding: 15px 20px;
+    }
+}
+@media (max-width: 576px) {
+    .testimonial-item {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
