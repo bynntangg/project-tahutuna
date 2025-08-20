@@ -23,84 +23,84 @@ function openModal(productId) {
             name: "Tahu Tuna Original",
             price: "Rp 25.000 / pack",
             description: "Perpaduan sempurna antara tahu dan daging tuna segar dengan bumbu rahasia keluarga. Setiap pack berisi 10 biji tahu tuna siap masak. Bisa digoreng, dikukus, atau dibakar sesuai selera. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/1.jpg"
         },
         {
             id: 2,
             name: "Tahu Tuna Spesial",
             price: "Rp 35.000 / pack",
             description: "Varian premium dengan kandungan tuna lebih banyak (70% tuna). Tekstur lebih lembut dan rasa lebih gurih. Pack 10 biji. Cocok untuk hidangan spesial keluarga atau sajian saat acara penting. Tahan hingga 6 minggu dalam freezer.",
-            image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+           image: "images/2.jpg"
         },
         {
             id: 3,
             name: "Risoles Jagung",
             price: "Rp 28.000 / pack",
             description: "Risoles dengan isian jagung manis dan bumbu spesial. Pack 10 biji. Crispy di luar, lembut di dalam. Cocok untuk camilan atau bekal sekolah anak. Bisa langsung digoreng dari freezer. Tahan hingga 3 minggu dalam freezer.",
-            image: "https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+           image: "images/3.jpg"
         },
         {
             id: 4,
             name: "Risoles Tuna",
             price: "Rp 30.000 / pack",
             description: "Risoles dengan isian tuna gurih dan sayuran. Pack 10 biji. Tekstur lembut dengan rasa tuna yang dominan. Praktis untuk camilan sehat keluarga. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/4.jpg"
         },
         {
             id: 5,
             name: "Otak-otak Tuna",
             price: "Rp 30.000 / pack",
             description: "Otak-otak dengan isian tuna gurih dibungkus daun pisang. Pack 10 biji. Bisa digoreng atau dibakar. Rasa yang autentik dengan aroma daun pisang yang khas. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/5.jpg"
         },
         {
             id: 6,
             name: "Otak-otak Udang",
             price: "Rp 35.000 / pack",
             description: "Otak-otak dengan isian udang segar dan bumbu rempah. Pack 10 biji. Dibungkus daun pisang untuk aroma yang sedap. Cocok untuk lauk atau camilan. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/6.jpg"
         },
         {
             id: 7,
             name: "Martabak Tuna",
             price: "Rp 32.000 / pack",
             description: "Martabak mini dengan isian tuna dan telur. Pack 10 biji. Kulit renyah dengan isian yang gurih. Praktis untuk sarapan atau camilan. Tahan hingga 3 minggu dalam freezer.",
-            image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/7.jpg"
         },
         {
             id: 8,
             name: "Lumpia Tuna",
             price: "Rp 30.000 / pack",
             description: "Lumpia dengan isian tuna dan sayuran. Pack 10 biji. Kulit tipis dan renyah dengan isian yang lembut. Cocok untuk segala acara. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/8.jpg"
         },
         {
             id: 9,
             name: "Kaki Naga",
             price: "Rp 40.000 / pack",
             description: "Olahan tuna dengan kulit tahu yang krispi. Pack 10 biji. Tekstur luar renyah dalam lembut. Disukai oleh anak-anak dan dewasa. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+           image: "images/9.jpg"
         },
         {
             id: 10,
             name: "Pangsit Tuna",
             price: "Rp 35.000 / pack",
             description: "Pangsit dengan isian tuna dan bumbu spesial. Pack 20 biji. Bisa digoreng atau direbus untuk sup. Praktis dan lezat. Tahan hingga 2 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/10.jpg"
         },
         {
             id: 11,
             name: "Bakso Tuna",
             price: "Rp 45.000 / pack",
             description: "Bakso ikan tuna dengan tekstur kenyal dan rasa gurih alami. Pack 500gr (isi 20-25 biji). Cocok untuk sup atau bakso kuah. Bisa langsung dimasak dari freezer. Tahan hingga 2 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+           image: "images/11.jpg"
         },
         {
             id: 12,
             name: "Sosis Tuna",
             price: "Rp 50.000 / pack",
             description: "Sosis dari daging tuna pilihan. Pack isi 10 biji. Tanpa pengawet dan bahan kimia. Praktis untuk sarapan atau bekal. Tahan hingga 2 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/12.jpg"
         }
     ];
 
@@ -195,6 +195,45 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+     document.addEventListener('DOMContentLoaded', function() {
+            const statItems = document.querySelectorAll('.stat-item');
+            
+            statItems.forEach(item => {
+                const statNumber = item.querySelector('.stat-number');
+                const finalValue = parseInt(statNumber.textContent);
+                let currentValue = 0;
+                const duration = 2000; // 2 seconds
+                const increment = finalValue / (duration / 16); // 60fps
+                
+                const updateCounter = () => {
+                    if (currentValue < finalValue) {
+                        currentValue += increment;
+                        if (currentValue > finalValue) currentValue = finalValue;
+                        
+                        if (statNumber.textContent.includes('+')) {
+                            statNumber.textContent = Math.floor(currentValue) + '+';
+                        } else {
+                            statNumber.textContent = Math.floor(currentValue) + '%';
+                        }
+                        
+                        setTimeout(updateCounter, 16);
+                    }
+                };
+                
+                // Start counter when element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(item);
+            });
+        });
+
     // Product data
     const products = [
         {
@@ -202,84 +241,84 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "Tahu Tuna Original",
             price: "Rp 25.000 / pack",
             description: "Perpaduan sempurna antara tahu dan daging tuna segar dengan bumbu rahasia keluarga. Setiap pack berisi 10 biji tahu tuna siap masak. Bisa digoreng, dikukus, atau dibakar sesuai selera. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/1.jpg"
         },
         {
             id: 2,
             name: "Tahu Tuna Spesial",
             price: "Rp 35.000 / pack",
             description: "Varian premium dengan kandungan tuna lebih banyak (70% tuna). Tekstur lebih lembut dan rasa lebih gurih. Pack 10 biji. Cocok untuk hidangan spesial keluarga atau sajian saat acara penting. Tahan hingga 6 minggu dalam freezer.",
-            image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+           image: "images/2.jpg"
         },
         {
             id: 3,
             name: "Risoles Jagung",
             price: "Rp 28.000 / pack",
             description: "Risoles dengan isian jagung manis dan bumbu spesial. Pack 10 biji. Crispy di luar, lembut di dalam. Cocok untuk camilan atau bekal sekolah anak. Bisa langsung digoreng dari freezer. Tahan hingga 3 minggu dalam freezer.",
-            image: "https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+           image: "images/3.jpg"
         },
         {
             id: 4,
             name: "Risoles Tuna",
             price: "Rp 30.000 / pack",
             description: "Risoles dengan isian tuna gurih dan sayuran. Pack 10 biji. Tekstur lembut dengan rasa tuna yang dominan. Praktis untuk camilan sehat keluarga. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/4.jpg"
         },
         {
             id: 5,
             name: "Otak-otak Tuna",
             price: "Rp 30.000 / pack",
             description: "Otak-otak dengan isian tuna gurih dibungkus daun pisang. Pack 10 biji. Bisa digoreng atau dibakar. Rasa yang autentik dengan aroma daun pisang yang khas. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/5.jpg"
         },
         {
             id: 6,
             name: "Otak-otak Udang",
             price: "Rp 35.000 / pack",
             description: "Otak-otak dengan isian udang segar dan bumbu rempah. Pack 10 biji. Dibungkus daun pisang untuk aroma yang sedap. Cocok untuk lauk atau camilan. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/6.jpg"
         },
         {
             id: 7,
             name: "Martabak Tuna",
             price: "Rp 32.000 / pack",
             description: "Martabak mini dengan isian tuna dan telur. Pack 10 biji. Kulit renyah dengan isian yang gurih. Praktis untuk sarapan atau camilan. Tahan hingga 3 minggu dalam freezer.",
-            image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/7.jpg"
         },
         {
             id: 8,
             name: "Lumpia Tuna",
             price: "Rp 30.000 / pack",
             description: "Lumpia dengan isian tuna dan sayuran. Pack 10 biji. Kulit tipis dan renyah dengan isian yang lembut. Cocok untuk segala acara. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/8.jpg"
         },
         {
             id: 9,
             name: "Kaki Naga",
             price: "Rp 40.000 / pack",
             description: "Olahan tuna dengan kulit tahu yang krispi. Pack 10 biji. Tekstur luar renyah dalam lembut. Disukai oleh anak-anak dan dewasa. Tahan hingga 1 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+           image: "images/9.jpg"
         },
         {
             id: 10,
             name: "Pangsit Tuna",
             price: "Rp 35.000 / pack",
             description: "Pangsit dengan isian tuna dan bumbu spesial. Pack 20 biji. Bisa digoreng atau direbus untuk sup. Praktis dan lezat. Tahan hingga 2 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1562967914-608f82629710?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/10.jpg"
         },
         {
             id: 11,
             name: "Bakso Tuna",
             price: "Rp 45.000 / pack",
             description: "Bakso ikan tuna dengan tekstur kenyal dan rasa gurih alami. Pack 500gr (isi 20-25 biji). Cocok untuk sup atau bakso kuah. Bisa langsung dimasak dari freezer. Tahan hingga 2 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+           image: "images/11.jpg"
         },
         {
             id: 12,
             name: "Sosis Tuna",
             price: "Rp 50.000 / pack",
             description: "Sosis dari daging tuna pilihan. Pack isi 10 biji. Tanpa pengawet dan bahan kimia. Praktis untuk sarapan atau bekal. Tahan hingga 2 bulan dalam freezer.",
-            image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            image: "images/12.jpg"
         }
     ];
 

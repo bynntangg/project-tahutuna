@@ -441,49 +441,228 @@ nav ul li a:hover {
     transform: translateY(0);
 }
 
-/* About Section */
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
 
-.about-text h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: var(--dark-color);
-}
+        /* About Section Styles */
+        .about-section {
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-.about-text p {
-    margin-bottom: 15px;
-}
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
 
-.about-text ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
+        .about-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
 
-.about-text ul li {
-    margin-bottom: 10px;
-}
+        .about-text {
+            padding-right: 20px;
+        }
 
-.about-image {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 10px;
+        }
 
-.about-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: var(--transition);
-}
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+            border-radius: 2px;
+        }
 
-.about-image:hover img {
-    transform: scale(1.05);
-}
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+        }
+
+        .vision-mission {
+            background: rgba(236, 240, 241, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .vision-mission h3 {
+            margin-top: 0;
+        }
+
+        .vision-mission p {
+            margin-bottom: 15px;
+        }
+
+        .vision-mission strong {
+            color: #e74c3c;
+        }
+
+        .vision-mission ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .vision-mission ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.6;
+        }
+
+        .vision-mission ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            height: fit-content;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .about-text {
+                padding-right: 0;
+                order: 2;
+            }
+            
+            .about-image {
+                order: 1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            
+            .about-text h3 {
+                font-size: 1.6rem;
+            }
+            
+            .vision-mission {
+                padding: 25px;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stat-item {
+                padding: 25px 15px;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-text h3 {
+                font-size: 1.4rem;
+            }
+            
+            .vision-mission {
+                padding: 20px;
+            }
+            
+            .stat-item {
+                padding: 20px 15px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
 
 /* Products Section */
 .products-grid-full {
