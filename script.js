@@ -279,7 +279,7 @@ function sendOrderViaWhatsApp() {
     message += "\n\nMohon info untuk pembayaran dan pengiriman. Terima kasih.";
     
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/6281234567890?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/6288294781090?text=${encodedMessage}`, '_blank');
     
     // Clear cart after order
     cart = [];
