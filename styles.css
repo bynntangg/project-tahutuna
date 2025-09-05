@@ -1195,16 +1195,29 @@ nav ul li a:hover {
     transform: translateY(0);
 }
 
-/* Order Section */
+/* Order Section Styles */
 .order-section {
     background: linear-gradient(135deg, #f9f9f9 0%, #e9f5ff 100%);
+    position: relative;
+}
+
+.order-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><text x="50%" y="50%" font-size="16" text-anchor="middle" fill="%23000000">🐟</text></svg>');
+    opacity: 0.05;
+    pointer-events: none;
 }
 
 .order-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: center;
+    align-items: start;
 }
 
 .order-info h3 {
@@ -1213,22 +1226,34 @@ nav ul li a:hover {
     color: var(--dark-color);
 }
 
-.order-info p {
+.order-info > p {
     margin-bottom: 30px;
     font-size: 1.1rem;
     color: var(--text-light);
+    line-height: 1.6;
 }
 
 .order-steps {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-bottom: 30px;
 }
 
 .order-step {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.order-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .step-number {
@@ -1242,11 +1267,13 @@ nav ul li a:hover {
     justify-content: center;
     font-weight: bold;
     flex-shrink: 0;
+    font-size: 1.2rem;
 }
 
 .step-content h4 {
     margin-bottom: 5px;
     color: var(--dark-color);
+    font-size: 1.2rem;
 }
 
 .step-content p {
@@ -1255,9 +1282,35 @@ nav ul li a:hover {
     font-size: 1rem;
 }
 
+.order-note {
+    background: rgba(236, 240, 241, 0.7);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.order-note h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+    font-size: 1.2rem;
+}
+
+.order-note ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.order-note li {
+    margin-bottom: 10px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
 .order-contact {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .contact-card {
@@ -1268,6 +1321,8 @@ nav ul li a:hover {
     text-align: center;
     max-width: 400px;
     width: 100%;
+    position: sticky;
+    top: 100px;
 }
 
 .contact-card h3 {
@@ -1276,13 +1331,16 @@ nav ul li a:hover {
     color: var(--dark-color);
 }
 
-.contact-card p {
+.contact-card > p {
     margin-bottom: 25px;
     color: var(--text-light);
+    line-height: 1.5;
 }
 
 .btn-whatsapp {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 15px 30px;
     background: #25D366;
     color: white;
@@ -1292,6 +1350,7 @@ nav ul li a:hover {
     transition: var(--transition);
     margin-bottom: 25px;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    width: 100%;
 }
 
 .btn-whatsapp:hover {
@@ -1302,20 +1361,87 @@ nav ul li a:hover {
 
 .btn-whatsapp i {
     margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.contact-info {
+    text-align: left;
 }
 
 .contact-info p {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--text-light);
 }
 
 .contact-info i {
-    margin-right: 10px;
+    margin-right: 12px;
     color: var(--primary-color);
     width: 16px;
+    text-align: center;
+}
+
+/* Responsive Styles for Order Section */
+@media (max-width: 992px) {
+    .order-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-card {
+        position: static;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+    
+    .step-number {
+        margin: 0 auto;
+    }
+    
+    .contact-card {
+        padding: 25px 20px;
+    }
+    
+    .order-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .order-note {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-steps {
+        gap: 15px;
+    }
+    
+    .order-step {
+        padding: 15px;
+    }
+    
+    .step-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .btn-whatsapp {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-info p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Footer Styles */
