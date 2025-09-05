@@ -1608,3 +1608,230 @@ footer {
         padding: 25px;
     }
 }
+/* Mobile Optimization */
+@media (max-width: 480px) {
+    /* Header Mobile */
+    header .container {
+        padding: 10px 15px;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    /* Hero Section Mobile */
+    .hero {
+        margin-top: 60px;
+    }
+    
+    .carousel {
+        height: 50vh;
+        border-radius: 0;
+    }
+    
+    .carousel-caption {
+        left: 15px;
+        right: 15px;
+        bottom: 20px;
+        padding: 15px;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-control {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+    }
+    
+    /* Advantages Grid Mobile */
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .advantage-item {
+        padding: 20px;
+    }
+    
+    .advantage-item i {
+        font-size: 2.5rem;
+    }
+    
+    /* Products Grid Mobile */
+    .products-grid,
+    .products-grid-full {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .product-item,
+    .product-card {
+        margin: 0 10px;
+    }
+    
+    /* Testimonials Mobile */
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-item {
+        margin: 0 10px;
+    }
+    
+    /* About Section Mobile */
+    .about-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-text {
+        padding-right: 0;
+    }
+    
+    .about-text h3 {
+        font-size: 1.4rem;
+    }
+    
+    .vision-mission {
+        padding: 20px;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stat-item {
+        padding: 20px 15px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    /* Gallery Mobile */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    /* Order Section Mobile */
+    .order-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .order-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .step-number {
+        margin: 0 auto;
+    }
+    
+    .contact-card {
+        padding: 25px 20px;
+    }
+    
+    /* Footer Mobile */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+    
+    /* Modal Mobile */
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+        flex-direction: column;
+        width: 95%;
+    }
+    
+    .modal-content img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    /* Cart Sidebar Mobile */
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+    }
+    
+    .cart-item-image {
+        width: 100%;
+        height: 150px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    /* Section Padding */
+    section {
+        padding: 50px 0;
+    }
+}
+
+/* Tablet Optimization */
+@media (max-width: 768px) and (min-width: 481px) {
+    .products-grid,
+    .products-grid-full {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+    .carousel-control {
+        padding: 12px 18px;
+    }
+    
+    .btn, .btn-hero, .btn-product {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Increase tappable area for mobile */
+    nav ul li a {
+        padding: 10px 0;
+        display: block;
+    }
+}
