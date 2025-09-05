@@ -1961,3 +1961,180 @@ footer {
         display: block;
     }
 }
+/* Perbaikan untuk footer pada mode mobile */
+@media (max-width: 768px) {
+    /* Pastikan footer content diatur ke tengah */
+    .footer-content {
+        text-align: center;
+    }
+    
+    /* Perbaikan khusus untuk social links */
+    .footer-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    /* Pastikan teks di footer juga terpusat */
+    .footer-links ul,
+    .footer-contact {
+        text-align: center;
+    }
+    
+    .footer-links ul li a {
+        justify-content: center;
+    }
+    
+    /* Perbaikan untuk ikon di footer contact */
+    .footer-contact p {
+        justify-content: center;
+    }
+}
+
+/* Untuk layar yang sangat kecil (mobile kecil) */
+@media (max-width: 480px) {
+    .social-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .social-links a {
+        margin: 5px;
+    }
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    color: var(--white);
+    z-index: 3;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--transition);
+    z-index: 4;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
+}
+
+/* Responsive Carousel */
+@media (max-width: 768px) {
+    .carousel {
+        height: 60vh;
+    }
+    
+    .carousel-caption {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    
+    .carousel-control {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 50vh;
+    }
+    
+    .carousel-caption {
+        left: 15px;
+        right: 15px;
+        padding: 15px;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.3rem;
+    }
+    
+    .carousel-control {
+        font-size: 1.2rem;
+        padding: 6px 10px;
+    }
+    
+    .carousel-control.prev {
+        left: 10px;
+    }
+    
+    .carousel-control.next {
+        right: 10px;
+    }
+}
