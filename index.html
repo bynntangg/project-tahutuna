@@ -5,9 +5,1926 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Tahu Tuna Pak Ran - Produk Olahan Tuna Berkualitas</title>
+    
+    <!-- Google Fonts untuk Gaya Brutalism -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- AOS Animation -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+        /* =========================================
+           VARIABEL & RESET (Gaya Neo-Brutalism)
+           ========================================= */
+        :root {
+            --bg-color: #f4f4f0;
+            --text-color: #111111;
+            --primary-orange: #ff5722;
+            --primary-yellow: #ffeb3b;
+            --primary-cyan: #00e5ff;
+            --border-width: 3px;
+            --border-color: #111111;
+            --shadow-color: #111111;
+            --shadow-offset: 6px;
+            --font-main: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            word-wrap: break-word;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* =========================================
+           KOMPONEN BRUTALISM
+           ========================================= */
+        .brutal-box, .testimonial-item, .advantage-item, .stat-item, .modal-content {
+            background: #fff;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+            padding: 30px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+        }
+
+        .brutal-box:hover, .advantage-item:hover, .testimonial-item:hover {
+            transform: translate(-4px, -4px) rotate(-0.5deg);
+            box-shadow: calc(var(--shadow-offset) + 4px) calc(var(--shadow-offset) + 4px) 0 var(--shadow-color);
+        }
+
+        .bg-cyan { background-color: var(--primary-cyan); }
+        .bg-yellow { background-color: var(--primary-yellow); }
+        .bg-orange { background-color: var(--primary-orange); color: #fff; }
+        .bg-white { background-color: #fff; }
+
+        .btn, .btn-product, .btn-checkout, .btn-add-to-cart, .btn-whatsapp, .btn-order {
+            display: inline-block;
+            padding: 12px 24px;
+            font-family: var(--font-main);
+            font-weight: 700;
+            text-transform: uppercase;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            cursor: pointer;
+            transition: all 0.15s;
+            text-align: center;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover, .btn-product:hover, .btn-checkout:hover, .btn-add-to-cart:hover, .btn-whatsapp:hover, .btn-order:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0 var(--shadow-color);
+        }
+
+        .btn:active, .btn-product:active, .btn-checkout:active, .btn-add-to-cart:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 var(--shadow-color);
+        }
+
+        .btn-primary, .btn-product, .btn-checkout, .btn-order {
+            background-color: var(--primary-orange);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #fff;
+            color: var(--text-color);
+        }
+
+        /* =========================================
+           SECTION HEADER (JUDUL & SUBJUDUL)
+           ========================================= */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            display: inline-block;
+            background: var(--primary-yellow);
+            padding: 12px 24px;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+            margin-bottom: 15px;
+            max-width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section-title:hover {
+            transform: rotate(-1deg) scale(1.02);
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.85;
+        }
+
+        /* =========================================
+           HEADER / NAVBAR
+           ========================================= */
+        header {
+            background-color: var(--bg-color);
+            border-bottom: var(--border-width) solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 0 var(--shadow-color);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            background: var(--primary-cyan);
+            padding: 5px 10px;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 3px 3px 0 var(--shadow-color);
+            white-space: nowrap;
+            transition: transform 0.2s;
+        }
+
+        .logo:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            border: 2px solid var(--border-color);
+            background: var(--primary-yellow);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px 10px;
+            border: var(--border-width) solid var(--border-color);
+            background: var(--primary-yellow);
+            transition: transform 0.2s;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            padding: 100px 0 60px; /* PERBAIKAN: padding-top lebih besar */
+            position: relative;
+            overflow: visible; /* PERBAIKAN: agar tidak memotong konten */
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(var(--border-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            border-bottom: var(--border-width) solid var(--border-color);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(244,244,240,0.3) 0%, rgba(244,244,240,0.95) 80%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-cyan);
+            border: var(--border-width) solid var(--border-color);
+            padding: 8px 16px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            margin-bottom: 25px; /* PERBAIKAN: jarak lebih lebar ke judul */
+            transform: rotate(-2deg);
+            animation: badgeFloat 3s ease-in-out infinite;
+            max-width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes badgeFloat {
+            0%, 100% { transform: rotate(-2deg) translateY(0); }
+            50% { transform: rotate(-2deg) translateY(-5px); }
+        }
+
+        .hero-badge i {
+            color: var(--primary-orange);
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            margin-top: 10px; /* PERBAIKAN: jarak atas */
+            line-height: 1.05; /* PERBAIKAN: line-height lebih longgar */
+            letter-spacing: -3px;
+            position: relative;
+        }
+
+        .hero-title .line-1 {
+            display: block;
+            color: var(--text-color);
+            -webkit-text-stroke: 2px var(--border-color);
+        }
+
+        .hero-title .line-2 {
+            display: block;
+            color: var(--primary-orange);
+            -webkit-text-stroke: 2px var(--border-color);
+            text-shadow: 5px 5px 0 var(--border-color);
+            position: relative;
+        }
+
+        .hero-title .title-sticker {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            background: var(--primary-yellow);
+            border: var(--border-width) solid var(--border-color);
+            padding: 6px 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            transform: rotate(8deg);
+            box-shadow: 3px 3px 0 var(--shadow-color);
+            letter-spacing: 0;
+            -webkit-text-stroke: 0;
+            text-shadow: none;
+            color: var(--text-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            max-width: 95%;
+            border-left: 5px solid var(--primary-orange);
+            padding-left: 15px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons .btn {
+            padding: 15px 25px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .hero-buttons .btn-primary {
+            background: var(--primary-orange);
+            color: #fff;
+            transform: rotate(-1deg);
+        }
+
+        .hero-buttons .btn-primary:hover {
+            transform: rotate(-1deg) translate(3px, 3px);
+        }
+
+        .hero-buttons .btn-secondary {
+            background: var(--primary-yellow);
+            transform: rotate(1deg);
+        }
+
+        .hero-buttons .btn-secondary:hover {
+            transform: rotate(1deg) translate(3px, 3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding-top: 25px;
+            border-top: 3px dashed var(--border-color);
+        }
+
+        .hero-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-stat-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-cyan);
+            border: var(--border-width) solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            box-shadow: 3px 3px 0 var(--shadow-color);
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .hero-stat-item:hover .hero-stat-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .hero-stat-text strong {
+            display: block;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .hero-stat-text span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .hero-image {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .brutal-image-box {
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 10px 10px 0 var(--shadow-color);
+            background: var(--primary-cyan);
+            padding: 12px;
+            position: relative;
+            transform: rotate(2deg);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .brutal-image-box:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .brutal-image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: var(--border-width) solid var(--border-color);
+            object-fit: cover;
+            aspect-ratio: 4/5;
+            background: #ddd;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: var(--border-width) solid var(--border-color);
+            background: var(--primary-yellow);
+            z-index: -1;
+            transform: rotate(-3deg);
+        }
+
+        .price-sticker {
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            background: var(--primary-orange);
+            color: #fff;
+            border: var(--border-width) solid var(--border-color);
+            padding: 12px 18px;
+            box-shadow: 5px 5px 0 var(--shadow-color);
+            transform: rotate(-8deg);
+            text-align: center;
+            z-index: 3;
+            animation: stickerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes stickerPulse {
+            0%, 100% { transform: rotate(-8deg) scale(1); }
+            50% { transform: rotate(-8deg) scale(1.05); }
+        }
+
+        .price-sticker small {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .price-sticker strong {
+            display: block;
+            font-size: 1.3rem;
+            line-height: 1.1;
+        }
+
+        .circle-sticker {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 85px;
+            height: 85px;
+            background: var(--primary-yellow);
+            border: var(--border-width) solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            line-height: 1.2;
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            z-index: 3;
+            animation: spinSlow 15s linear infinite;
+        }
+
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .deco-element {
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .deco-star-1 {
+            top: 10%;
+            left: 5%;
+            font-size: 2.5rem;
+            color: var(--primary-orange);
+            animation: floatY 4s ease-in-out infinite;
+        }
+
+        .deco-star-2 {
+            bottom: 15%;
+            right: 8%;
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+            animation: floatY 5s ease-in-out infinite reverse;
+        }
+
+        .deco-circle {
+            top: 20%;
+            right: 3%;
+            width: 35px;
+            height: 35px;
+            border: var(--border-width) solid var(--border-color);
+            border-radius: 50%;
+            background: var(--primary-yellow);
+            animation: floatY 3.5s ease-in-out infinite;
+        }
+
+        @keyframes floatY {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Marquee */
+        .marquee {
+            background: var(--border-color);
+            color: #fff;
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: var(--border-width) solid var(--border-color);
+            border-bottom: var(--border-width) solid var(--border-color);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-content span {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-right: 50px;
+        }
+
+        .marquee:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* =========================================
+           SECTION TRANSITION (Animasi saat masuk viewport)
+           ========================================= */
+        section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================
+           ADVANTAGES SECTION — TRIK FLEX GRID AGAR CENTER
+           ========================================= */
+        .advantages-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 25px;
+            width: 100%;
+        }
+
+        .advantage-item {
+            text-align: center;   
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+        }
+
+        .advantage-item i {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .advantage-item:hover i {
+            transform: scale(1.2) rotate(8deg);
+        }
+
+        .advantage-item h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .advantage-item p {
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           PRODUCTS GRID — DESAIN BARU YANG LEBIH MENARIK
+           ========================================= */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-item {
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+            padding: 20px;
+            position: relative; 
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+        }
+
+        .product-item:hover {
+            transform: translate(-4px, -4px) rotate(1deg);
+            box-shadow: calc(var(--shadow-offset) + 4px) calc(var(--shadow-offset) + 4px) 0 var(--shadow-color);
+        }
+
+        .product-image-wrapper {
+            border: var(--border-width) solid var(--border-color);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #eee;
+            width: 100%;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .product-item:hover .product-image-wrapper {
+            transform: scale(1.02);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-price {
+            position: absolute;
+            bottom: -15px;
+            right: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--primary-orange);
+            padding: 8px 15px;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 3px 3px 0 var(--shadow-color);
+            transform: rotate(-5deg);
+            z-index: 2;
+            transition: transform 0.3s;
+        }
+
+        .product-item:hover .product-price {
+            transform: rotate(2deg) scale(1.1);
+            background: var(--primary-yellow);
+            color: var(--text-color);
+        }
+
+        .product-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            width: 100%;
+            padding-top: 10px;
+        }
+
+        .product-item h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            background: var(--primary-yellow);
+            display: inline-block;
+            padding: 3px 10px;
+            border: 2px solid var(--border-color);
+            align-self: center;
+            transform: rotate(-1deg);
+        }
+
+        .product-item p {
+            font-size: 0.85rem;
+            flex-grow: 1;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .product-features {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .product-features span {
+            background: var(--primary-cyan);
+            padding: 3px 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-product {
+            background-color: var(--primary-orange);
+            color: #fff;
+            width: 100%;
+            padding: 12px 10px;
+            font-size: 0.9rem;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 3px 3px 0 var(--shadow-color);
+            margin-top: auto; 
+            transition: all 0.2s;
+        }
+
+        .btn-product:hover {
+            background-color: var(--primary-yellow);
+            color: var(--text-color);
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 var(--shadow-color);
+        }
+
+        /* =========================================
+           TESTIMONIALS
+           ========================================= */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-content p {
+            font-size: 1rem;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 2px dashed var(--border-color);
+            padding-top: 15px;
+        }
+
+        .testimonial-author img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: var(--border-width) solid var(--border-color);
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-item:hover .testimonial-author img {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .testimonial-author h4 {
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author p {
+            font-size: 0.75rem;
+        }
+
+        /* =========================================
+           ABOUT SECTION
+           ========================================= */
+        .about-main {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .vision-mission {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px dashed var(--border-color);
+            background: rgba(255,255,255,0.5);
+        }
+
+        .vision-mission ul {
+            list-style: square;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .vision-mission ul li {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        /* =========================================
+           GALLERY — HOVER ZOOM
+           ========================================= */
+        .gallery-grid .brutal-image-box {
+            overflow: hidden;
+        }
+
+        .gallery-grid .brutal-image-box img {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-grid .brutal-image-box:hover img {
+            transform: scale(1.15);
+        }
+
+        /* =========================================
+           MODAL & CART
+           ========================================= */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(3px);
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--bg-color);
+            margin: 5% auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.8) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .close, .close-cart {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            transition: transform 0.2s;
+        }
+
+        .close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .close-cart {
+            position: static;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border: var(--border-width) solid var(--border-color);
+            object-fit: cover;
+        }
+
+        .modal-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin: 10px 0;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .quantity-btn, .quantity-controls input {
+            border: var(--border-width) solid var(--border-color);
+            background: #fff;
+            padding: 5px 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: var(--font-main);
+            text-align: center;
+        }
+
+        .quantity-btn {
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background: var(--primary-yellow);
+            transform: scale(1.1);
+        }
+
+        .quantity-controls input {
+            width: 60px;
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 400px;
+            max-width: 100%;
+            height: 100vh;
+            background: var(--bg-color);
+            border-left: var(--border-width) solid var(--border-color);
+            z-index: 2001;
+            transition: right 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: var(--border-width) solid var(--border-color);
+            background: var(--primary-yellow);
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #ccc;
+            padding-bottom: 15px;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #111;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-info p {
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 5px;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .cart-item-qty button {
+            width: 25px;
+            height: 25px;
+            border: 2px solid #111;
+            background: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .cart-item-qty button:hover {
+            background: var(--primary-yellow);
+        }
+
+        .cart-item-qty span {
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .remove-item {
+            background: var(--primary-orange);
+            color: #fff;
+            border: 2px solid #111;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+        }
+
+        .remove-item:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: var(--border-width) solid var(--border-color);
+            background: #fff;
+        }
+
+        .cart-total {
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .btn-checkout {
+            width: 100%;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--primary-cyan);
+            color: #111;
+            padding: 15px 25px;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+            font-weight: 700;
+            z-index: 3000;
+            transform: translateX(150%);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 0.9rem;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* =========================================
+           ORDER SECTION
+           ========================================= */
+        .order-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .order-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+            transition: transform 0.3s;
+        }
+
+        .order-step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            background: var(--border-color);
+            color: #fff;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            border: 2px solid var(--border-color);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .order-step:hover .step-number {
+            transform: scale(1.15) rotate(-8deg);
+            background: var(--primary-orange);
+        }
+
+        .step-content h4 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: var(--border-color);
+            color: #fff;
+            padding: 60px 0 20px;
+            border-top: var(--border-width) solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-content h3 {
+            color: var(--primary-yellow);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-content p, .footer-content a {
+            font-size: 0.9rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: color 0.2s, padding-left 0.2s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-cyan);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           FLOATING ELEMENTS (Diperbaiki untuk Mobile)
+           ========================================= */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            left: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px 20px;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        .cart-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            background: var(--primary-yellow);
+            color: var(--text-color);
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            cursor: pointer;
+            z-index: 999;
+            transition: transform 0.3s;
+        }
+
+        .cart-toggle:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--primary-orange);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: bold;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--border-color);
+            animation: pop 0.3s ease;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0); }
+            70% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        
+        /* Tablet */
+        @media (max-width: 992px) {
+            .hero-grid, .about-main, .order-content, .modal-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-title .title-sticker {
+                position: static;
+                display: inline-block;
+                margin-top: 10px;
+                transform: rotate(0);
+            }
+
+            .hero-image::before {
+                display: none;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .circle-sticker {
+                width: 80px;
+                height: 80px;
+                font-size: 0.6rem;
+                top: -15px;
+                right: -15px;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                width: 92%;
+            }
+
+            .section-padding {
+                padding: 50px 0;
+            }
+
+            /* Header Mobile */
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-color);
+                border-bottom: var(--border-width) solid var(--border-color);
+                padding: 20px;
+                z-index: 999;
+                box-shadow: 0 5px 0 var(--shadow-color);
+                gap: 10px;
+            }
+
+            nav ul.active {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            nav ul li a {
+                display: block;
+                text-align: center;
+                padding: 10px;
+                font-size: 1rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Section Title Mobile */
+            .section-header {
+                margin-bottom: 35px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                padding: 10px 18px;
+                box-shadow: 4px 4px 0 var(--shadow-color);
+                letter-spacing: -0.5px;
+            }
+
+            .section-subtitle {
+                font-size: 0.85rem;
+                padding: 0 10px;
+            }
+
+            /* =========================================
+               PERBAIKAN HERO MOBILE (AGAR TIDAK TERPOTONG)
+               ========================================= */
+            .hero {
+                padding: 90px 0 60px !important; /* Ruang ekstra di atas */
+            }
+
+            .hero-grid {
+                gap: 35px;
+            }
+
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+                margin-bottom: 30px !important; /* Jarak lebih lebar ke judul */
+                display: inline-flex;
+                transform: rotate(0deg); /* Matikan rotasi agar rapi */
+            }
+
+            .hero-title {
+                font-size: 2.6rem;
+                letter-spacing: -1.5px;
+                line-height: 1.1 !important; /* Perbaiki line-height */
+                margin-top: 10px !important;
+                margin-bottom: 20px;
+            }
+
+            .hero-title .line-1,
+            .hero-title .line-2 {
+                display: block;
+            }
+
+            .hero-title .line-2 {
+                text-shadow: 3px 3px 0 var(--border-color);
+            }
+
+            .hero-title .title-sticker {
+                position: relative;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                margin-top: 10px;
+                transform: rotate(0deg);
+                font-size: 0.65rem;
+                padding: 4px 8px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+                padding-left: 12px;
+                margin-bottom: 25px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 30px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 0.95rem;
+            }
+
+            .hero-stats {
+                justify-content: space-between;
+                gap: 10px;
+                padding-top: 20px;
+            }
+
+            .hero-stat-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+                flex: 1;
+            }
+
+            .hero-stat-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+
+            .hero-stat-text strong {
+                font-size: 1rem;
+            }
+
+            .hero-stat-text span {
+                font-size: 0.65rem;
+            }
+
+            /* =========================================
+               PERBAIKAN HERO IMAGE MOBILE
+               ========================================= */
+            .hero-image {
+                padding-bottom: 40px;
+            }
+
+            .brutal-image-box {
+                padding: 8px;
+                box-shadow: 6px 6px 0 var(--shadow-color);
+                transform: rotate(0) !important;
+            }
+
+            .brutal-image-box img {
+                aspect-ratio: 4/3;
+                object-fit: cover;
+            }
+
+            .price-sticker {
+                bottom: -15px;
+                left: 0px;
+                padding: 8px 15px;
+                box-shadow: 3px 3px 0 var(--shadow-color);
+                transform: rotate(-4deg);
+            }
+
+            .price-sticker strong {
+                font-size: 1.1rem;
+            }
+
+            .price-sticker small {
+                font-size: 0.6rem;
+            }
+
+            .circle-sticker {
+                width: 75px;
+                height: 75px;
+                font-size: 0.6rem;
+                top: -15px;
+                right: -5px;
+                border-width: 2px;
+            }
+
+            .deco-element, .scroll-indicator {
+                display: none;
+            }
+
+            /* Marquee Mobile */
+            .marquee-content span {
+                font-size: 0.9rem;
+                margin-right: 30px;
+            }
+
+            /* ============================================
+               PRODUCT GRID MOBILE — 2 KOLOM DESAIN BARU
+               ============================================ */
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+            }
+
+            .product-item {
+                padding: 12px !important;
+                box-shadow: 3px 3px 0 var(--shadow-color) !important;
+            }
+
+            .product-image-wrapper {
+                margin: 0 auto 15px auto !important;
+                border-width: 2px !important;
+                width: 100% !important;
+                aspect-ratio: 1/1 !important;
+            }
+
+            .product-price {
+                font-size: 0.8rem !important;
+                padding: 5px 8px !important;
+                bottom: -12px !important;
+                right: 5px !important;
+                border-width: 2px !important;
+            }
+
+            .product-item h3 {
+                font-size: 0.9rem !important;
+                margin-bottom: 6px !important;
+                padding: 2px 6px !important;
+                border-width: 1px !important;
+            }
+
+            .product-item p {
+                font-size: 0.7rem !important;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .product-features {
+                display: none !important;
+            }
+
+            .btn-product {
+                padding: 8px 10px !important;
+                font-size: 0.75rem !important;
+                box-shadow: 2px 2px 0 var(--shadow-color) !important;
+                border-width: 2px !important;
+            }
+
+            /* KOTAK KEUNGGULAN JADI 2 KOLOM */
+            .advantages-wrapper {
+                gap: 12px !important;
+            }
+
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+            }
+
+            .advantage-item {
+                padding: 14px !important;
+                box-shadow: 3px 3px 0 var(--shadow-color) !important;
+                text-align: center;
+            }
+
+            .advantage-item i {
+                font-size: 1.6rem !important;
+                margin-bottom: 8px !important;
+            }
+
+            .advantage-item h3 {
+                font-size: 0.8rem !important;
+                margin-bottom: 4px !important;
+                line-height: 1.2;
+            }
+
+            .advantage-item p {
+                font-size: 0.7rem !important;
+                line-height: 1.3;
+            }
+
+            /* Testimonial */
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .brutal-box, .testimonial-item, .stat-item {
+                padding: 20px;
+                box-shadow: 4px 4px 0 var(--shadow-color);
+            }
+
+            /* About */
+            .about-main {
+                gap: 25px;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 10px !important;
+            }
+
+            .stat-item {
+                padding: 12px 8px !important;
+            }
+
+            .stat-number {
+                font-size: 1.4rem !important;
+            }
+
+            .stat-text {
+                font-size: 0.65rem !important;
+                line-height: 1.2;
+            }
+
+            /* Order */
+            .order-content {
+                gap: 20px;
+            }
+
+            /* Modal */
+            .modal-content {
+                margin: 5% auto;
+                padding: 20px;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                width: 92%;
+            }
+
+            .close {
+                top: 5px;
+                right: 15px;
+                font-size: 2rem;
+            }
+
+            .modal-content img {
+                aspect-ratio: 1/1;
+            }
+
+            .modal-price {
+                font-size: 1.3rem;
+            }
+
+            /* Cart */
+            .cart-sidebar {
+                width: 100%;
+            }
+
+            .cart-item {
+                flex-wrap: nowrap;
+            }
+
+            .cart-item-info h4 {
+                font-size: 0.85rem;
+            }
+
+            .cart-item img {
+                width: 50px;
+                height: 50px;
+            }
+
+            /* =========================================
+               FLOATING ELEMENTS MOBILE
+               ========================================= */
+            .float-whatsapp span {
+                display: none;
+            }
+
+            .float-whatsapp {
+                padding: 15px;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                justify-content: center;
+                left: 15px;
+                bottom: 20px;
+            }
+
+            .cart-toggle {
+                width: 50px;
+                height: 50px;
+                right: 15px;
+                bottom: 20px;
+            }
+
+            .toast {
+                bottom: 85px;
+                right: 15px;
+                left: 15px;
+                text-align: center;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+                padding: 8px 14px;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+
+            .product-item {
+                padding: 15px !important;
+            }
+
+            .product-image-wrapper {
+                width: 80% !important;
+                margin-bottom: 15px !important;
+            }
+
+            .product-item h3 {
+                font-size: 1rem !important;
+            }
+
+            .product-item p {
+                font-size: 0.8rem !important;
+            }
+
+            .btn-product {
+                padding: 10px 14px !important;
+                font-size: 0.8rem !important;
+            }
+        }
+
+        /* Reduce motion untuk aksesibilitas */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            section {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -30,15 +1947,15 @@
             <button class="close-cart" id="closeCart">&times;</button>
         </div>
         <div class="cart-items" id="cartItems">
-            <!-- Cart items will be added here -->
-            <div class="empty-cart" id="emptyCart">
-                <i class="fas fa-shopping-cart"></i>
+            <div class="empty-cart" id="emptyCart" style="text-align: center; margin-top: 50px;">
+                <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 15px;"></i>
                 <p>Keranjang belanja kosong</p>
             </div>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
-                Total: <span id="cartTotal">Rp 0</span>
+                <span>Total:</span>
+                <span id="cartTotal">Rp 0</span>
             </div>
             <button class="btn-checkout" id="checkoutBtn" disabled>
                 <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
@@ -48,11 +1965,15 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <header>
-        <div class="container">
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Produk ditambahkan ke keranjang!</div>
+
+    <!-- Header / Navbar -->
+    <header id="mainHeader">
+        <div class="container header-container">
             <a href="#" class="logo">TahuTuna.co.id</a>
             <nav>
-                <ul>
+                <ul id="navMenu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#products">Produk</a></li>
@@ -60,213 +1981,212 @@
                     <li><a href="#order" class="btn-order">Pesan</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle">
+            <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section id="home" class="hero">
-        <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                        alt="Toko Tahu Tuna Pak Ran">
-                    <div class="carousel-caption">
-                        <h2 data-aos="fade-right" data-aos-delay="300">Tahu Tuna Pak Ran</h2>
-                        <p data-aos="fade-right" data-aos-delay="500">Olahan Tuna Berkualitas Sejak 2009</p>
-                        <a href="#order" class="btn-hero" data-aos="fade-right" data-aos-delay="700">Pesan Sekarang</a>
+        <div class="deco-element deco-star-1"><i class="fas fa-star"></i></div>
+        <div class="deco-element deco-star-2"><i class="fas fa-star"></i></div>
+        <div class="deco-element deco-circle"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>BPOM Certified • Halal MUI • Since 2009</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="line-1">TAHU TUNA</span>
+                        <span class="line-2">PAK RAN
+                            <span class="title-sticker">★ BEST SELLER</span>
+                        </span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Olahan tuna berkualitas premium sejak 2009. Dibuat dari bahan pilihan terbaik, tanpa pengawet, dan diproses secara higienis untuk keluarga Indonesia.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#order" class="btn btn-primary">
+                            <i class="fas fa-shopping-bag"></i> PESAN SEKARANG
+                        </a>
+                        <a href="#products" class="btn btn-secondary">
+                            <i class="fas fa-utensils"></i> LIHAT PRODUK
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-icon"><i class="fas fa-award"></i></div>
+                            <div class="hero-stat-text">
+                                <strong data-count="14" data-suffix="+">0+</strong>
+                                <span>Tahun</span>
+                            </div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-icon"><i class="fas fa-users"></i></div>
+                            <div class="hero-stat-text">
+                                <strong data-count="5000" data-suffix="+">0+</strong>
+                                <span>Pelanggan</span>
+                            </div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="hero-stat-text">
+                                <strong data-count="100" data-suffix="%">0%</strong>
+                                <span>Halal</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                        alt="Produk Tahu Tuna">
-                    <div class="carousel-caption">
-                        <h2 data-aos="fade-right" data-aos-delay="300">Rasa Autentik</h2>
-                        <p data-aos="fade-right" data-aos-delay="500">Diolah dengan bahan pilihan terbaik</p>
-                        <a href="#products" class="btn-hero" data-aos="fade-right" data-aos-delay="700">Lihat Produk</a>
+
+                <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="circle-sticker">
+                        <span>100%<br>ALAMI<br>NO MSG</span>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                        alt="Proses Produksi">
-                    <div class="carousel-caption">
-                        <h2 data-aos="fade-right" data-aos-delay="300">Hygienis dan Terjamin</h2>
-                        <p data-aos="fade-right" data-aos-delay="500">Proses produksi yang bersih dan terstandar</p>
-                        <a href="#about" class="btn-hero" data-aos="fade-right" data-aos-delay="700">Tentang Kami</a>
+                    
+                    <div class="brutal-image-box" id="heroImageBox">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tahu Tuna Pak Ran">
+                    </div>
+
+                    <div class="price-sticker">
+                        <small>Mulai dari</small>
+                        <strong>Rp 9.000</strong>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <section class="advantages">
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-content">
+            <span>BPOM CERTIFIED // HALAL MUI // NO PRESERVATIVES // SINCE 2009 // TAHU TUNA PAK RAN //</span>
+            <span>BPOM CERTIFIED // HALAL MUI // NO PRESERVATIVES // SINCE 2009 // TAHU TUNA PAK RAN //</span>
+        </div>
+    </div>
+
+    <!-- Advantages Section -->
+    <section class="advantages section-padding">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Keunggulan Tahu Tuna Pak Ran</h2>
-            <div class="advantages-grid">
-                <div class="advantage-item" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-medal"></i>
-                    <h3>Izin Edar BPOM</h3>
-                    <p>No. MD 243213001616</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">KEUNGGULAN KAMI</h2>
+                <p class="section-subtitle">Mengapa memilih Tahu Tuna Pak Ran? Ini alasannya.</p>
+            </div>
+            
+            <div class="advantages-wrapper">
+                <div class="advantages-grid">
+                    <div class="advantage-item bg-cyan" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-medal"></i>
+                        <h3>Izin Edar BPOM</h3>
+                        <p>No. MD 243213001616</p>
+                    </div>
+                    <div class="advantage-item bg-white" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-tags"></i>
+                        <h3>Harga Bersaing</h3>
+                        <p>Kualitas premium dengan harga terjangkau</p>
+                    </div>
+                    <div class="advantage-item bg-yellow" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Tanpa Pengawet</h3>
+                        <p>100% alami tanpa bahan pengawet</p>
+                    </div>
+                    <div class="advantage-item bg-white" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-snowflake"></i>
+                        <h3>Tahan Lama</h3>
+                        <p>Awet dalam freezer</p>
+                    </div>
+                    <div class="advantage-item bg-white" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-award"></i>
+                        <h3>Berdiri Sejak 2009</h3>
+                        <p>Pengalaman lebih dari 10 tahun</p>
+                    </div>
+                    <div class="advantage-item bg-yellow" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-box-open"></i>
+                        <h3>Kemasan Vacuum</h3>
+                        <p>Kemasan kedap udara untuk kesegaran maksimal</p>
+                    </div>
+                    <div class="advantage-item bg-cyan" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-fish"></i>
+                        <h3>Komposisi Tuna Terbanyak</h3>
+                        <p>Rasa tuna yang dominan dan autentik</p>
+                    </div>
+                    <div class="advantage-item bg-white" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Bersertifikat Halal MUI</h3>
+                        <p>Terjamin kehalalannya</p>
+                    </div>
                 </div>
-                <div class="advantage-item" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-tags"></i>
-                    <h3>Harga Bersaing</h3>
-                    <p>Kualitas premium dengan harga terjangkau</p>
-                </div>
-                <div class="advantage-item" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Tanpa Pengawet</h3>
-                    <p>100% alami tanpa bahan pengawet</p>
-                </div>
-                <div class="advantage-item" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-snowflake"></i>
-                    <h3>Tahan Lama</h3>
-                    <p>Awet dalam freezer</p>
-                </div>
-                <div class="advantage-item" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-award"></i>
-                    <h3>Berdiri Sejak 2009</h3>
-                    <p>Pengalaman lebih dari 10 tahun</p>
-                </div>
-                <div class="advantage-item" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-box-open"></i>
-                    <h3>Kemasan Vacuum</h3>
-                    <p>Kemasan kedap udara untuk kesegaran maksimal</p>
-                </div>
-                <div class="advantage-item" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-fish"></i>
-                    <h3>Komposisi Tuna Terbanyak</h3>
-                    <p>Rasa tuna yang dominan dan autentik</p>
-                </div>
-                <div class="advantage-item" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-certificate"></i>
-                    <h3>Bersertifikat Halal MUI</h3>
-                    <p>Terjamin kehalalannya</p>
-                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Best Seller Section -->
+    <section class="best-seller section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">PRODUK BEST SELLER</h2>
+                <p class="section-subtitle">Produk paling favorit yang paling sering dipesan pelanggan.</p>
+            </div>
+            <div class="products-grid" id="bestSellerGrid">
+                <!-- Produk akan dirender oleh JavaScript -->
             </div>
         </div>
     </section>
 
-    <section class="best-seller">
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Produk Best Seller</h2>
-            <div class="products-grid">
-                <div class="product-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="images/1.jpg" alt="Tahu Tuna">
-                    <h3>Tahu Tuna</h3>
-                    <p>Perpaduan tahu dan tuna dengan bumbu rahasia keluarga</p>
-                    <p class="product-price">Rp 9.000 / pack</p>
-                    <button class="btn-product" onclick="openModal(1)">Pesan Sekarang!!</button>
-                </div>
-                <div class="product-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/2.jpg" alt="Tahu Tuna Spesial">
-                    <h3>Tahu Tuna Spesial</h3>
-                    <p>Varian premium dengan kandungan tuna lebih banyak</p>
-                    <p class="product-price">Rp 12.000 / pack</p>
-                    <button class="btn-product" onclick="openModal(2)">Pesan Sekarang!!</button>
-                </div>
-                <div class="product-item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="images/5.jpg" alt="Otak-otak Tuna">
-                    <h3>Otak-otak Tuna</h3>
-                    <p>Otak-otak dengan isian tuna gurih dibungkus daun pisang</p>
-                    <p class="product-price">Rp 30.000 / pack</p>
-                    <button class="btn-product" onclick="openModal(5)">Pesan Sekarang!!</button>
-                </div>
-                <div class="product-item" data-aos="fade-up" data-aos-delay="400">
-                    <img src="images/3.jpg" alt="Risoles Jagung">
-                    <h3>Risoles Jagung</h3>
-                    <p>Risoles dengan isian jagung manis dan tuna</p>
-                    <p class="product-price">Rp 28.000 / pack</p>
-                    <button class="btn-product" onclick="openModal(3)">Pesan Sekarang!!</button>
-                </div>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">APA KATA MEREKA</h2>
+                <p class="section-subtitle">Testimoni jujur dari pelanggan setia Tahu Tuna Pak Ran.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Testimoni Pelanggan</h2>
             <div class="testimonial-grid">
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-item bg-white" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-content">
-                        <p>Tahu Tuna Pak Ran sudah menjadi favorit keluarga kami. Rasanya enak dan anak-anak suka
-                            sekali!</p>
+                        <p>"Tahu Tuna Pak Ran sudah menjadi favorit keluarga kami. Rasanya enak dan anak-anak suka sekali!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/siti.jpg" alt="Pelanggan">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Pelanggan">
                         <div>
                             <h4>Ibu Siti</h4>
                             <p>Pelanggan sejak 2015</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-item bg-cyan" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-content">
-                        <p>Kualitas selalu konsisten, kemasan rapi, dan rasanya benar-benar berbeda dengan produk
-                            sejenis.</p>
+                        <p>"Kualitas selalu konsisten, kemasan rapi, dan rasanya benar-benar berbeda dengan produk sejenis."</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/budi.jpg" alt="Pelanggan">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pelanggan">
                         <div>
                             <h4>Budi Santoso</h4>
                             <p>Pelanggan tetap</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-item bg-yellow" data-aos="fade-up" data-aos-delay="300">
                     <div class="testimonial-content">
-                        <p>Saya sering membeli untuk oleh-oleh, respon dari teman-teman selalu positif. Recommended!</p>
+                        <p>"Saya sering membeli untuk oleh-oleh, respon dari teman-teman selalu positif. Recommended!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="images/dewi.jpeg" alt="Pelanggan">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Pelanggan">
                         <div>
                             <h4>Dewi Anggraeni</h4>
                             <p>Pelanggan online</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="testimonial-content">
-                        <p>Sebagai reseller, produk Tahu Tuna Pak Ran selalu laris karena kualitasnya terjamin.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/agus.jpeg" alt="Pelanggan">
-                        <div>
-                            <h4>Agus Wijaya</h4>
-                            <p>Reseller</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-content">
-                        <p>Saya suka variasi produk Tahu Tuna Pak Ran, terutama otak-otak udang. Rasanya
-                            enak dan harga terjangkau!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/maya.jpeg" alt="Pelanggan">
-                        <div>
-                            <h4>Maya Sari</h4>
-                            <p>Pelanggan baru</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-content">
-                        <p>Tidak pernah kecewa dengan produknya. Sudah mencoba semua varian dan semuanya enak!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/rina.jpeg" alt="Pelanggan">
-                        <div>
-                            <h4>Rina Marlina</h4>
-                            <p>Pelanggan setia</p>
                         </div>
                     </div>
                 </div>
@@ -274,31 +2194,22 @@
         </div>
     </section>
 
-    <section id="about" class="about-section">
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Tentang Kami</h2>
-
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">TENTANG KAMI</h2>
+                <p class="section-subtitle">Kenali lebih dekat usaha keluarga yang berdiri sejak 2009.</p>
+            </div>
             <div class="about-content">
                 <div class="about-main">
-                    <div class="about-text">
+                    <div class="about-text brutal-box">
                         <h3 data-aos="fade-right">Profil Tahu Tuna Pak Ran</h3>
-                        <p data-aos="fade-right" data-aos-delay="100">Tahu Tuna Pak Ran adalah usaha keluarga yang
-                            didirikan pada tahun 2009 oleh Bapak Ranto (Pak Ran)
-                            yang memiliki passion di bidang kuliner, khususnya olahan ikan tuna. Berawal dari usaha
-                            rumahan
-                            kecil, kini Tahu Tuna Pak Ran telah berkembang menjadi produsen olahan tuna yang dikenal di
-                            berbagai daerah.</p>
-                        <p data-aos="fade-right" data-aos-delay="200">Kami berkomitmen untuk menyajikan produk olahan
-                            tuna berkualitas tinggi dengan menggunakan
-                            bahan-bahan terbaik dan proses produksi yang higienis. Setiap produk kami dibuat dengan
-                            resep
-                            turun-temurun yang telah disempurnakan selama bertahun-tahun.</p>
-
+                        <p data-aos="fade-right" data-aos-delay="100">Tahu Tuna Pak Ran adalah usaha keluarga yang didirikan pada tahun 2009 oleh Bapak Ranto (Pak Ran) yang memiliki passion di bidang kuliner, khususnya olahan ikan tuna. Berawal dari usaha rumahan kecil, kini Tahu Tuna Pak Ran telah berkembang menjadi produsen olahan tuna yang dikenal di berbagai daerah.</p>
+                        <p data-aos="fade-right" data-aos-delay="200">Kami berkomitmen untuk menyajikan produk olahan tuna berkualitas tinggi dengan menggunakan bahan-bahan terbaik dan proses produksi yang higienis. Setiap produk kami dibuat dengan resep turun-temurun yang telah disempurnakan selama bertahun-tahun.</p>
                         <div class="vision-mission" data-aos="fade-up" data-aos-delay="300">
                             <h3>Visi & Misi</h3>
-                            <p><strong>Visi:</strong> Menjadi produsen olahan tuna terdepan yang dikenal dengan
-                                kualitas,
-                                keamanan pangan, dan rasa autentik.</p>
+                            <p><strong>Visi:</strong> Menjadi produsen olahan tuna terdepan yang dikenal dengan kualitas, keamanan pangan, dan rasa autentik.</p>
                             <p><strong>Misi:</strong></p>
                             <ul>
                                 <li>Menyediakan produk olahan tuna berkualitas tinggi dengan harga terjangkau</li>
@@ -308,23 +2219,21 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="about-image" data-aos="fade-left" data-aos-delay="300">
-                        <img src="images/gambar.jpg" alt="Proses Produksi Tahu Tuna">
+                    <div class="about-image brutal-image-box" data-aos="fade-left" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Proses Produksi Tahu Tuna">
                     </div>
                 </div>
-
                 <div class="about-stats">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="stat-number">14+</div>
+                    <div class="stat-item bg-orange" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number" data-count="14" data-suffix="+">0+</div>
                         <div class="stat-text">Tahun Pengalaman</div>
                     </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="stat-number">5000+</div>
+                    <div class="stat-item bg-orange" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number" data-count="5000" data-suffix="+">0+</div>
                         <div class="stat-text">Pelanggan Setia</div>
                     </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="stat-number">12+</div>
+                    <div class="stat-item bg-orange" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number" data-count="12" data-suffix="+">0+</div>
                         <div class="stat-text">Variasi Produk</div>
                     </div>
                 </div>
@@ -332,56 +2241,69 @@
         </div>
     </section>
 
-    <section id="products" class="products-section">
+    <!-- Products Section (Dynamic Full Catalog) -->
+    <section id="products" class="products-section section-padding">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Produk Kami</h2>
-            <div class="products-grid-full">
-                <!-- Product items will be added dynamically by JavaScript -->
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">KATALOG LENGKAP</h2>
+                <p class="section-subtitle">Semua varian produk Tahu Tuna Pak Ran yang siap dipesan.</p>
+            </div>
+            <div class="products-grid" id="fullCatalogGrid">
+                <!-- Produk akan dirender oleh JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Product Modal (diperbarui dengan tombol tambah ke keranjang) -->
+    <!-- Product Modal -->
     <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
+        <div class="modal-content brutal-box">
+            <span class="close" onclick="closeModal()">&times;</span>
             <img id="modalImage" src="" alt="Product Image">
             <div class="modal-info">
                 <h2 id="modalTitle"></h2>
                 <p id="modalPrice" class="modal-price"></p>
                 <p id="modalDescription"></p>
                 <div class="quantity-selector">
-                    <label for="productQuantity">Jumlah:</label>
+                    <label for="productQuantity" style="font-weight: bold; display: block; margin-top: 15px;">Jumlah:</label>
                     <div class="quantity-controls">
-                        <button class="quantity-btn" id="decreaseQty">-</button>
-                        <input type="number" id="productQuantity" value="1" min="1" max="99">
-                        <button class="quantity-btn" id="increaseQty">+</button>
+                        <button class="quantity-btn" onclick="changeQty(-1)">-</button>
+                        <input type="number" id="productQuantity" value="1" min="1" max="99" readonly>
+                        <button class="quantity-btn" onclick="changeQty(1)">+</button>
                     </div>
                 </div>
-                <button class="btn-add-to-cart" id="addToCartBtn">
+                <button class="btn-add-to-cart" id="addToCartBtn" onclick="addToCart()">
                     <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
                 </button>
             </div>
         </div>
     </div>
 
-    <section id="gallery" class="gallery-section">
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section section-padding">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Galeri</h2>
-            <div class="gallery-grid">
-                <!-- Gallery items will be added dynamically by JavaScript -->
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">GALERI KAMI</h2>
+                <p class="section-subtitle">Intip proses produksi dan produk-produk kami.</p>
+            </div>
+            <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                 <div class="brutal-image-box"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Galeri"></div>
+                 <div class="brutal-image-box"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Galeri"></div>
+                 <div class="brutal-image-box"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Galeri"></div>
             </div>
         </div>
     </section>
 
     <!-- Order Section -->
-    <section id="order" class="order-section">
+    <section id="order" class="order-section section-padding">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Pesan Sekarang</h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">CARA PESAN</h2>
+                <p class="section-subtitle">Pesan dengan mudah dalam 3 langkah sederhana.</p>
+            </div>
             <div class="order-content" data-aos="fade-up" data-aos-delay="200">
-                <div class="order-info">
+                <div class="order-info brutal-box bg-cyan">
                     <h3>Cara Memesan Tahu Tuna Pak Ran</h3>
-                    <p>Kami membuat proses pemesanan menjadi mudah dan cepat. Ikuti langkah-langkah berikut:</p>
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Kami membuat proses pemesanan menjadi mudah dan cepat. Ikuti langkah-langkah berikut:</p>
                     <div class="order-steps">
                         <div class="order-step">
                             <div class="step-number">1</div>
@@ -404,36 +2326,20 @@
                                 <p>Klik tombol "Pesan via WhatsApp" untuk mengirim pesanan</p>
                             </div>
                         </div>
-                        <div class="order-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Konfirmasi & Pembayaran</h4>
-                                <p>Tim kami akan mengonfirmasi pesanan dan mengirimkan detail pembayaran</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-note">
-                        <h4>Catatan Penting:</h4>
-                        <ul>
-                            <li>Minimal pemesanan 5 pack untuk pengiriman</li>
-                            <li>Gratis ongkir untuk pemesanan di atas Rp 100.000 (area tertentu)</li>
-                            <li>Pesanan diproses setiap hari Senin - Sabtu, pukul 08.00 - 17.00 WIB</li>
-                        </ul>
                     </div>
                 </div>
-                <div class="order-contact">
+                <div class="order-contact brutal-box bg-yellow">
                     <div class="contact-card">
                         <h3>Hubungi Kami via WhatsApp</h3>
-                        <p>Klik tombol di bawah untuk langsung terhubung dengan kami</p>
+                        <p style="font-size: 0.95rem;">Klik tombol di bawah untuk langsung terhubung dengan kami</p>
                         <a href="https://wa.me/6281234567890?text=Halo%20Tahu%20Tuna%20Pak%20Ran,%20saya%20ingin%20bertanya%20tentang%20produk"
-                            class="btn-whatsapp" target="_blank">
+                            class="btn-whatsapp btn-primary" target="_blank" style="width: 100%; margin-top: 15px; margin-bottom: 20px;">
                             <i class="fab fa-whatsapp"></i> Chat via WhatsApp
                         </a>
                         <div class="contact-info">
                             <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
                             <p><i class="fas fa-envelope"></i> info@tahutunapakran.com</p>
                             <p><i class="fas fa-map-marker-alt"></i> Jl. Tuna Sejahtera No. 123, Jakarta</p>
-                            <p><i class="fas fa-clock"></i> Senin - Sabtu: 08.00 - 17.00 WIB</p>
                         </div>
                     </div>
                 </div>
@@ -441,18 +2347,13 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>Tahu Tuna Pak Ran</h3>
-                    <p>Produsen olahan tuna berkualitas sejak 2009. Terbuat dari bahan pilihan dengan proses higienis
-                        dan terstandar.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <p>Produsen olahan tuna berkualitas sejak 2009. Terbuat dari bahan pilihan dengan proses higienis dan terstandar.</p>
                 </div>
                 <div class="footer-links">
                     <h3>Link Cepat</h3>
@@ -460,7 +2361,6 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">Tentang Kami</a></li>
                         <li><a href="#products">Produk</a></li>
-                        <li><a href="#gallery">Galeri</a></li>
                         <li><a href="#order">Pesan</a></li>
                     </ul>
                 </div>
@@ -468,8 +2368,6 @@
                     <h3>Kontak Kami</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Jl. Tuna Sejahtera No. 123, Jakarta</p>
                     <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
-                    <p><i class="fas fa-envelope"></i> info@tahutunapakran.com</p>
-                    <p><i class="fas fa-clock"></i> Senin - Sabtu: 08.00 - 17.00 WIB</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -478,8 +2376,371 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="script.js"></script>
-</body>
+    <script>
+        // =========================================
+        // AOS Init
+        // =========================================
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-in-out'
+        });
 
+        // =========================================
+        // HEADER SCROLL EFFECT
+        // =========================================
+        const mainHeader = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 30) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+        });
+
+        // =========================================
+        // SECTION TRANSITION
+        // =========================================
+        const sections = document.querySelectorAll('section');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        // =========================================
+        // COUNTER ANIMATION
+        // =========================================
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-count'));
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = 1500;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 4);
+                const value = Math.floor(eased * target);
+                el.textContent = value.toLocaleString('id-ID') + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                    entry.target.dataset.animated = 'true';
+                    animateCounter(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+        // =========================================
+        // PARALLAX RINGAN PADA HERO IMAGE (Hanya Desktop)
+        // =========================================
+        const heroImageBox = document.getElementById('heroImageBox');
+        if (heroImageBox && window.innerWidth > 768) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                if (scrolled < 800) {
+                    heroImageBox.style.transform = `rotate(${2 - scrolled * 0.005}deg) translateY(${scrolled * 0.05}px)`;
+                }
+            });
+        }
+
+        // =========================================
+        // DATA PRODUK
+        // =========================================
+        const products = [
+            {
+                id: 1,
+                title: "Tahu Tuna",
+                price: 9000,
+                desc: "Perpaduan tahu dan tuna dengan bumbu rahasia keluarga",
+                image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                bestSeller: true
+            },
+            {
+                id: 2,
+                title: "Tahu Tuna Spesial",
+                price: 12000,
+                desc: "Varian premium dengan kandungan tuna lebih banyak",
+                image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                bestSeller: true
+            },
+            {
+                id: 3,
+                title: "Otak-otak Tuna",
+                price: 30000,
+                desc: "Otak-otak dengan isian tuna gurih dibungkus daun pisang",
+                image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                bestSeller: true
+            },
+            {
+                id: 4,
+                title: "Risoles Jagung",
+                price: 28000,
+                desc: "Risoles dengan isian jagung manis dan tuna",
+                image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                bestSeller: true
+            },
+            {
+                id: 5,
+                title: "Tahu Tuna Pedas",
+                price: 10000,
+                desc: "Tahu tuna dengan sensasi pedas menggugah selera",
+                image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                bestSeller: false
+            },
+            {
+                id: 6,
+                title: "Pastel Tuna",
+                price: 25000,
+                desc: "Pastel renyah dengan isian tuna lezat",
+                image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+                bestSeller: false
+            }
+        ];
+
+        // =========================================
+        // RENDER PRODUK (Dengan Desain Baru)
+        // =========================================
+        function renderProducts() {
+            const bestSellerGrid = document.getElementById('bestSellerGrid');
+            const fullCatalogGrid = document.getElementById('fullCatalogGrid');
+            
+            const createProductHTML = (p, index, isBestSeller = false) => `
+                <div class="product-item" data-aos="zoom-in" data-aos-delay="${50 * (index + 1)}">
+                    <div class="product-image-wrapper">
+                        <img src="${p.image}" alt="${p.title}">
+                        <div class="product-price">Rp ${p.price.toLocaleString('id-ID')}</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>${p.title}</h3>
+                        <p>${p.desc}</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check-circle" style="color:var(--primary-orange);"></i> Halal</span>
+                            <span><i class="fas fa-check-circle" style="color:var(--primary-orange);"></i> Fresh</span>
+                        </div>
+                        <button class="btn-product" onclick="openModal(${p.id})">PESAN SEKARANG</button>
+                    </div>
+                </div>
+            `;
+
+            bestSellerGrid.innerHTML = products.slice(0, 4).map((p, index) => createProductHTML(p, index, true)).join('');
+            fullCatalogGrid.innerHTML = products.map((p, index) => createProductHTML(p, index, false)).join('');
+        }
+
+        renderProducts();
+
+        // =========================================
+        // MENU MOBILE
+        // =========================================
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // =========================================
+        // MODAL PRODUK
+        // =========================================
+        let currentProduct = {};
+        
+        function openModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+            
+            currentProduct = product;
+            
+            document.getElementById('modalTitle').innerText = product.title;
+            document.getElementById('modalPrice').innerText = 'Rp ' + product.price.toLocaleString('id-ID');
+            document.getElementById('modalDescription').innerText = product.desc;
+            document.getElementById('modalImage').src = product.image;
+            document.getElementById('productQuantity').value = 1;
+            
+            document.getElementById('productModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function changeQty(amount) {
+            const qtyInput = document.getElementById('productQuantity');
+            let currentQty = parseInt(qtyInput.value);
+            let newQty = currentQty + amount;
+            
+            if (newQty >= 1 && newQty <= 99) {
+                qtyInput.value = newQty;
+            }
+        }
+
+        // =========================================
+        // KERANJANG BELANJA
+        // =========================================
+        let cart = [];
+        const cartSidebar = document.getElementById('cartSidebar');
+        const overlay = document.getElementById('overlay');
+        const cartToggle = document.getElementById('cartToggle');
+        const closeCartBtn = document.getElementById('closeCart');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartItemsContainer = document.getElementById('cartItems');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const toast = document.getElementById('toast');
+
+        cartToggle.addEventListener('click', () => {
+            cartSidebar.classList.add('open');
+            overlay.classList.add('active');
+        });
+
+        closeCartBtn.addEventListener('click', closeCart);
+        overlay.addEventListener('click', closeCart);
+
+        function closeCart() {
+            cartSidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+
+        function showToast() {
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        function addToCart() {
+            const qty = parseInt(document.getElementById('productQuantity').value);
+            
+            const existingItem = cart.find(item => item.id === currentProduct.id);
+            
+            if (existingItem) {
+                existingItem.qty += qty;
+            } else {
+                cart.push({
+                    id: currentProduct.id,
+                    title: currentProduct.title,
+                    price: currentProduct.price,
+                    qty: qty,
+                    image: currentProduct.image
+                });
+            }
+            
+            updateCartUI();
+            closeModal();
+            showToast();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function changeCartQty(id, amount) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.qty += amount;
+                if (item.qty <= 0) {
+                    removeFromCart(id);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        function updateCartUI() {
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartCount.innerText = totalItems;
+            
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart" style="text-align: center; margin-top: 50px;">
+                        <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                        <p>Keranjang belanja kosong</p>
+                    </div>
+                `;
+                checkoutBtn.disabled = true;
+                cartTotal.innerText = 'Rp 0';
+            } else {
+                let totalPrice = 0;
+                
+                cart.forEach(item => {
+                    totalPrice += (item.price * item.qty);
+                    
+                    cartItemsContainer.innerHTML += `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.title}">
+                            <div class="cart-item-info">
+                                <h4>${item.title}</h4>
+                                <p>Rp ${item.price.toLocaleString('id-ID')}</p>
+                            </div>
+                            <div class="cart-item-actions">
+                                <div class="cart-item-qty">
+                                    <button onclick="changeCartQty(${item.id}, -1)">-</button>
+                                    <span>${item.qty}</span>
+                                    <button onclick="changeCartQty(${item.id}, 1)">+</button>
+                                </div>
+                                <button class="remove-item" onclick="removeFromCart(${item.id})">Hapus</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                cartTotal.innerText = 'Rp ' + totalPrice.toLocaleString('id-ID');
+                checkoutBtn.disabled = false;
+            }
+        }
+
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) return;
+            
+            let message = "Halo Tahu Tuna Pak Ran, saya ingin memesan:\n\n";
+            let total = 0;
+            
+            cart.forEach(item => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                message += `- ${item.title} (${item.qty}x) = Rp ${subtotal.toLocaleString('id-ID')}\n`;
+            });
+            
+            message += `\nTotal: Rp ${total.toLocaleString('id-ID')}\n\nMohon info ketersediaan dan ongkirnya. Terima kasih.`;
+            
+            const waNumber = '6281234567890';
+            const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(waUrl, '_blank');
+        });
+
+    </script>
+</body>
 </html>
